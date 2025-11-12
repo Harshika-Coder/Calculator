@@ -13,26 +13,26 @@
         <h1><b>CALCULATOR</b></h1>
         <input type="text" id="display" disabled>
         <div class="button-container">
-            <button class="Calculator-btn" onclick="appendToDisplay('%')">%</button>
-            <button class="Calculator-btn" onclick="clearDisplay()">CE</button>
-            <button class="Calculator-btn" onclick="clearDisplay()">C</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '%'; document.querySelector('#display').value= currentDisplay;">%</button>
+            <button class="Calculator-btn" onclick="currentDisplay = ''; document.querySelector('#display').value= currentDisplay;">CE</button>
+            <button class="Calculator-btn" onclick="currentDisplay = ''; document.querySelector('#display').value= currentDisplay;">C</button>
             <button class="Calculator-btn">&#x232B;</button><br />
-            <button class="Calculator-btn" onclick="appendToDisplay('7')">7</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('8')">8</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('9')">9</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('/')">/</button><br />
-            <button class="Calculator-btn" onclick="appendToDisplay('4')">4</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('5')">5</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('6')">6</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('*')">*</button><br />
-            <button class="Calculator-btn" onclick="appendToDisplay('1')">1</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('2')">2</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('3')">3</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('+')">+</button><br />
-            <button class="Calculator-btn" onclick="appendToDisplay('-')">-</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('0')">0</button>
-            <button class="Calculator-btn" onclick="appendToDisplay('.')">.</button>
-            <button class="Calculator-btn" onclick="calculateResult()">=</button><br>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '7'; document.querySelector('#display').value= currentDisplay;">7</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '8'; document.querySelector('#display').value= currentDisplay;">8</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '9'; document.querySelector('#display').value= currentDisplay;">9</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '/'; document.querySelector('#display').value= currentDisplay;">/</button><br />
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '4'; document.querySelector('#display').value= currentDisplay;">4</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '5'; document.querySelector('#display').value= currentDisplay;">5</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '6'; document.querySelector('#display').value= currentDisplay;">6</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '*'; document.querySelector('#display').value= currentDisplay;">*</button><br />
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '1'; document.querySelector('#display').value= currentDisplay;">1</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '2'; document.querySelector('#display').value= currentDisplay;">2</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '3'; document.querySelector('#display').value= currentDisplay;">3</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '+'; document.querySelector('#display').value= currentDisplay;">+</button><br />
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '-'; document.querySelector('#display').value= currentDisplay;">-</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '0'; document.querySelector('#display').value= currentDisplay;">0</button>
+            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '.'; document.querySelector('#display').value= currentDisplay;">.</button>
+            <button class="Calculator-btn" onclick="let result = eval(currentDisplay); currentDisplay = result; document.querySelector('#display').value= currentDisplay;">=</button><br />
         </div>
     </div>
     <script src="script.js"></script>
