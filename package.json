@@ -1,0 +1,27 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "A simple and interactive Calculator application built using HTML, CSS, and JavaScript. This project was developed to strengthen core web development skills and practice DOM manipulation, event handling, and responsive design.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harshika-Coder/Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Harshika-Coder/Calculator/issues"
+  },
+  "homepage": "https://github.com/Harshika-Coder/Calculator#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5"
+  }
+}
