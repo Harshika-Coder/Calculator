@@ -1,41 +1,81 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: lightgray;
+  font-family: Arial, sans-serif;
 }
 
 #calculator {
-    width: 280px;
-    height: auto;
-    padding: 20px;
-    border: 2px solid rgb(163, 163, 163);
-    border-radius: 10px;
-    text-align: center;
-    color: black;
-    background-color: antiquewhite;
+  width: 90%; /* Scales with the viewport width */
+  max-width: 400px; /*looks neat on laptop */
+  min-width: 280px; /* looks neat on mobile */
+  margin: 20px auto; /*centre on any device */
+  padding: 20px;
+  border: 2px solid rgb(163, 163, 163);
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  background-color: rgb(70, 113, 137);
+}
+#recent-display {
+  width: 90%;
+  height: 30px;
+  margin: 10px;
+  font-size: 1.15rem;
+  text-align: right;
+  color: rgb(14, 14, 14);
+  border: 1.5px solid #100e0e;
+  background-color: rgb(173, 189, 202);
 }
 
 #display {
-    width: 90%;
-    height: 30px;
-    margin: 10px;
-    font-size: 25px;
-    text-align: right;
+  width: 90%;
+  height: 60px;
+  margin: 10px;
+  font-size: 1.5rem;
+  text-align: right;
+  color: rgb(14, 14, 14);
+  border: 3px solid #0c0c0c;
+  background-color: rgb(173, 189, 202);
 }
-.button-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 20px auto;
 }
-.Calculator-btn{
-    width: 50px;
-    height: 50px;
-    margin: 2px;
+.Calc-btn {
+  font-size: 1.5rem;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: skyblue;
+  color: black;
+  justify-self: stretch; /* makes button fill its grid cell */
+  transition: background-color 0.2s;
+}
+.Calc-btn:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  #calculator {
+    max-width: 95%;
+    padding: 10px;
+  }
+  .Calc-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
 }

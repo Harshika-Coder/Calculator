@@ -1,41 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CALCULATOR</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div id="calculator">
-        <h1><b>CALCULATOR</b></h1>
-        <input type="text" id="display" disabled>
-        <div class="button-container">
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '%'; document.querySelector('#display').value= currentDisplay;">%</button>
-            <button class="Calculator-btn" onclick="currentDisplay = ''; document.querySelector('#display').value= currentDisplay;">CE</button>
-            <button class="Calculator-btn" onclick="currentDisplay = ''; document.querySelector('#display').value= currentDisplay;">C</button>
-            <button class="Calculator-btn">&#x232B;</button><br />
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '7'; document.querySelector('#display').value= currentDisplay;">7</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '8'; document.querySelector('#display').value= currentDisplay;">8</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '9'; document.querySelector('#display').value= currentDisplay;">9</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '/'; document.querySelector('#display').value= currentDisplay;">/</button><br />
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '4'; document.querySelector('#display').value= currentDisplay;">4</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '5'; document.querySelector('#display').value= currentDisplay;">5</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '6'; document.querySelector('#display').value= currentDisplay;">6</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '*'; document.querySelector('#display').value= currentDisplay;">*</button><br />
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '1'; document.querySelector('#display').value= currentDisplay;">1</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '2'; document.querySelector('#display').value= currentDisplay;">2</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '3'; document.querySelector('#display').value= currentDisplay;">3</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '+'; document.querySelector('#display').value= currentDisplay;">+</button><br />
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '-'; document.querySelector('#display').value= currentDisplay;">-</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '0'; document.querySelector('#display').value= currentDisplay;">0</button>
-            <button class="Calculator-btn" onclick="currentDisplay = currentDisplay + '.'; document.querySelector('#display').value= currentDisplay;">.</button>
-            <button class="Calculator-btn" onclick="let result = eval(currentDisplay); currentDisplay = result; document.querySelector('#display').value= currentDisplay;">=</button><br />
-        </div>
+      <h1><b>CALCULATOR</b></h1>
+
+      <!-- Secondary mini-display for recent number -->
+      <input type="text" id="recent-display" disabled />
+
+      <!-- Main display for full expression -->
+      <input type="text" id="display" disabled />
+
+      <div class="button-container">
+        <button class="Calc-btn">%</button>
+        <button class="Calc-btn">CE</button>
+        <button class="Calc-btn">C</button>
+        <button class="Calc-btn">&#x232B;</button>
+
+        <button class="Calc-btn">7</button>
+        <button class="Calc-btn">8</button>
+        <button class="Calc-btn">9</button>
+        <button class="Calc-btn">/</button>
+
+        <button class="Calc-btn">4</button>
+        <button class="Calc-btn">5</button>
+        <button class="Calc-btn">6</button>
+        <button class="Calc-btn">*</button>
+
+        <button class="Calc-btn">1</button>
+        <button class="Calc-btn">2</button>
+        <button class="Calc-btn">3</button>
+        <button class="Calc-btn">+</button>
+
+        <button class="Calc-btn">-</button>
+        <button class="Calc-btn">0</button>
+        <button class="Calc-btn">.</button>
+        <button class="Calc-btn">=</button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
