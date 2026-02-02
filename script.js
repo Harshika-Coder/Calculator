@@ -31,12 +31,13 @@ function clearEntry() {
 // Function to evaluate the display
 function evaluateDisplay() {
   try {
-    const result = eval(currentDisplay);
-    recentDisplay.value = currentDisplay;
-    display.value = result;
+    const expression = currentDisplay;
+    const result = eval(expression);
 
+    recentDisplay.value = expression + " =";
+    display.value = result;
     // Save the calculation to the server
-    saveCalculation(currentDisplay, result);
+    saveCalculation(expression, result);
 
     // clear currentDisplay after evaluation
     currentDisplay = "";
@@ -104,6 +105,9 @@ async function saveCalculation(expression, result) {
     });
     if (response.ok) {
       fetchHistory(); // Refresh history after saving
+    } else {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to save calculation");
     }
   } catch (error) {
     alert("Error saving calculation: " + error.message);
@@ -118,14 +122,13 @@ async function fetchHistory() {
     const history = await response.json();
 
     // Display history in history section
-    if (history.length === 0) {
+    if (!Array.isArray(history) || history.length === 0) {
       historySection.innerHTML = "No previous calculations.";
       return;
-    } else {
-      historySection.innerHTML = history
-        .map((calc) => `<p>${calc.expression} = ${calc.result}</p>`)
-        .join("");
     }
+    historySection.innerHTML = history
+      .map((calc) => `<p>${calc.expression} = ${calc.result}</p>`)
+      .join("");
   } catch (error) {
     historySection.innerHTML = "Failed to load history";
     console.error("Error fetching history:", error);
