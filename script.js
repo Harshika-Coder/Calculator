@@ -98,11 +98,7 @@ document.addEventListener("keydown", function (event) {
 async function saveCalculation(expression, result) {
   try {
     const response = await fetch("http://localhost:3000/api/calculations", {
-<<<<<<< HEAD
       method: "POST", //request method
-=======
-      method: "POST",
->>>>>>> 702826dc105af3babf3e74931691179472f52189
       headers: {
         "Content-Type": "application/json",
       },
@@ -144,11 +140,7 @@ async function fetchHistory() {
 clearHistory.addEventListener("click", async () => {
   try {
     const response = await fetch("http://localhost:3000/api/calculations", {
-<<<<<<< HEAD
       method: "DELETE", //request method
-=======
-      method: "DELETE",
->>>>>>> 702826dc105af3babf3e74931691179472f52189
     });
     if (response.ok) {
       historySection.innerHTML = "No previous calculations.";
