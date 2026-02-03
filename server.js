@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = 5501;
+const PORT = 3000;
 
 //Middleware
 app.use(express.json());
@@ -30,8 +30,8 @@ app.post("/api/calculations", async (req, res) => {
     if (
       !expression ||
       expression.trim() === "" ||
-      !result ||
-      result.trim() === ""
+      result === null ||
+      result === undefined
     ) {
       return res
         .status(400)

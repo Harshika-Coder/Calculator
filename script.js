@@ -4,6 +4,7 @@ const display = document.querySelector("#display");
 const recentDisplay = document.querySelector("#recent-display");
 const buttons = document.querySelectorAll(".Calc-btn");
 const historySection = document.querySelector("#history-section");
+const clearHistory = document.querySelector("#clear-history");
 
 //Display the Most Recent Entered Number
 function showRecentNumber() {
@@ -96,8 +97,8 @@ document.addEventListener("keydown", function (event) {
 // Function to save calculation to server
 async function saveCalculation(expression, result) {
   try {
-    const response = await fetch("http://localhost:5501/api/calculations", {
-      method: "POST",
+    const response = await fetch("http://localhost:3000/api/calculations", {
+      method: "POST", //request method
       headers: {
         "Content-Type": "application/json",
       },
@@ -106,8 +107,8 @@ async function saveCalculation(expression, result) {
     if (response.ok) {
       fetchHistory(); // Refresh history after saving
     } else {
-      const errorData = await response.json();
-      throw new Error(errorData.error || "Failed to save calculation");
+      const errorData = await response.text();
+      throw new Error(errorData || "Failed to save calculation");
     }
   } catch (error) {
     alert("Error saving calculation: " + error.message);
@@ -118,7 +119,7 @@ async function saveCalculation(expression, result) {
 async function fetchHistory() {
   historySection.innerHTML = "Loading...";
   try {
-    const response = await fetch("http://localhost:5501/api/calculations");
+    const response = await fetch("http://localhost:3000/api/calculations");
     const history = await response.json();
 
     // Display history in history section
@@ -136,18 +137,17 @@ async function fetchHistory() {
 }
 
 // Clear history
-document.querySelector("#clear-history").addEventListener("click", async () => {
+clearHistory.addEventListener("click", async () => {
   try {
-    const response = await fetch("http://localhost:5501/api/calculations", {
-      method: "DELETE",
+    const response = await fetch("http://localhost:3000/api/calculations", {
+      method: "DELETE", //request method
     });
     if (response.ok) {
       historySection.innerHTML = "No previous calculations.";
       clearDisplay();
-    } else {
-      alert("Failed to clear history");
     }
   } catch (error) {
+    alert("Failed to clear history");
     console.error("Error clearing history:", error);
   }
 });
