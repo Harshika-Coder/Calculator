@@ -1,14 +1,37 @@
 # Calculator
-A simple and interactive Calculator application built using HTML, CSS, and JavaScript. This project was developed to strengthen core web development skills and practice DOM manipulation, event handling, and responsive design.
+A full-stack calculator application built with HTML, CSS, JavaScript (frontend) and Node.js, Express, MongoDB (backend).
+It allows users to perform calculations, save history, and manage stored results.
+**🚀 Features**
 
-🚀 Features
-- ➕ Perform basic arithmetic operations: addition, subtraction, multiplication, division
-- 🖱️ Interactive buttons with click functionality
-- 🎨 Clean and responsive UI with modern styling
-- 🧮 Real‑time display updates for user inputs and results
-- 🔄 Reset/clear functionality
+**Frontend**
+- Interactive Calculator UI
+- Perform basic arithmetic operations (+, −, ×, ÷).
+- Responsive design for desktop and mobile.
+- Dynamic Display
+- Shows current expression and result in real-time.
+- Error Handling
+- Prevents invalid inputs (e.g., consecutive operators).
+- Displays error messages for invalid expressions.
+- Integration with Backend
+- Sends calculations to backend via fetch (POST request).
+- Fetches saved history (GET request).
+- Clears history (DELETE request).
+- 
+**Backend (Express + MongoDB)**
+- REST API Endpoints
+- GET /api/test → Verify backend is running.
+- POST /api/calculations → Save a new calculation.
+- GET /api/calculations → Retrieve all saved calculations (sorted by newest first).
+- DELETE /api/calculations → Clear all history.
+- MongoDB Integration
+- Stores calculations with fields:
+- expression (string)
+- result (string)
+- date (auto-generated timestamp)
 
-🛠️ Technologies Used
-- HTML5 – Structure of the calculator
-- CSS3 – Styling and layout (Flexbox, transitions)
-- JavaScript (ES6) – Functionality, event handling, and calculations
+ ** 🛠️ Tech Stack**
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express.js
+- Database: MongoDB (Mongoose ODM)
+- Other Tools: CORS, Live Server
+
