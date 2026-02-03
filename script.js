@@ -96,7 +96,7 @@ document.addEventListener("keydown", function (event) {
 // Function to save calculation to server
 async function saveCalculation(expression, result) {
   try {
-    const response = await fetch("http://localhost:5501/api/calculations", {
+    const response = await fetch("http://localhost:3000/api/calculations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -118,7 +118,7 @@ async function saveCalculation(expression, result) {
 async function fetchHistory() {
   historySection.innerHTML = "Loading...";
   try {
-    const response = await fetch("http://localhost:5501/api/calculations");
+    const response = await fetch("http://localhost:3000/api/calculations");
     const history = await response.json();
 
     // Display history in history section
@@ -138,7 +138,7 @@ async function fetchHistory() {
 // Clear history
 document.querySelector("#clear-history").addEventListener("click", async () => {
   try {
-    const response = await fetch("http://localhost:5501/api/calculations", {
+    const response = await fetch("http://localhost:3000/api/calculations", {
       method: "DELETE",
     });
     if (response.ok) {
